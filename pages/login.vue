@@ -55,6 +55,7 @@
         border-radius: 15px;
         background: #ffffff;
         box-shadow: 1px 1px 6px rgba(114, 55, 238, 0.25);
+        
       "
     >
       <h4 class="not-margin" style="text-align: center; margin-top: 76px;">

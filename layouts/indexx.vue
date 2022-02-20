@@ -3,19 +3,19 @@
     <v-row>
       <v-col cols="2">
         <v-navigation-drawer permanent fixed>
-          <v-list>
+          <v-list style="background-color:#00B0FF">
             <v-list-item class="px-2">
               <v-list-item-avatar>
                 <img src="~/assets/user.png" />
               </v-list-item-avatar>
             </v-list-item>
 
-            <v-list-item link>
+            <v-list-item link >
               <v-list-item-content>
-                <v-list-item-title class="text-h6">
+                <v-list-item-title class="text-h6" style="color:#ffffff">
                   Sandra Adams
                 </v-list-item-title>
-                <v-list-item-subtitle
+                <v-list-item-subtitle style="color:#ffffff"
                   >sandra_a88@gmail.com</v-list-item-subtitle
                 >
               </v-list-item-content>

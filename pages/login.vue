@@ -46,7 +46,7 @@
       elevation="0"
       outlined
       style="
-        margin-top : 175px;
+        margin-top: 175px;
         width: 700px;
         height: 400px;
         display: block;
@@ -55,10 +55,9 @@
         border-radius: 15px;
         background: #ffffff;
         box-shadow: 1px 1px 6px rgba(114, 55, 238, 0.25);
-        
       "
     >
-      <h4 class="not-margin" style="text-align: center; margin-top: 76px;">
+      <h4 class="not-margin" style="text-align: center; margin-top: 76px">
         <b>เข้าสู่ระบบจองห้องเรียนออนไลน์</b>
       </h4>
       <div
@@ -71,7 +70,7 @@
         "
       >
         <vs-input
-          color="#7d33ff"
+          color="primary:#5b3cc4"
           class="user"
           v-model="user"
           placeholder="ชื่อผู้ใช้งาน"
@@ -81,12 +80,13 @@
           </template>
         </vs-input>
         <vs-input
-          color="#7d33ff"
+          color="primary:#5b3cc4"
           class="pass"
           v-model="pass"
           type="password"
           placeholder="รหัสผ่าน"
         >
+          >
           <template #icon>
             <i class="bx bxs-lock-open"></i>
           </template>

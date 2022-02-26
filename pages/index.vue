@@ -1,9 +1,10 @@
 <template>
-  <v-row class="ma-0">
-    <div class="box7" style="background-color: dodgerblue">
-      <i class="bx bx-dialpad-alt">Dashboard</i>
-    </div>
-    <!-- <v-col cols="12" md="3" sm="12">
+  <div>
+    <v-row class="ma-0">
+      <div class="box7" style="background-color: dodgerblue; margin-top: -2%">
+        <i class="bx bx-dialpad-alt">Dashboard</i>
+      </div>
+      <!-- <v-col cols="12" md="3" sm="12">
       <v-card width="300" height="100" style="margin-top: 5px">
         <v-row no-gutters class="background">
           <v-col cols="12" md="4" sm="4" style="background-color: #009900">
@@ -31,7 +32,7 @@
         </v-row>
       </v-card>
     </v-col> -->
-    <!-- <v-col cols="12" md="3" sm="12">
+      <!-- <v-col cols="12" md="3" sm="12">
       <v-card width="300" height="100" style="margin-top: 5px">
         <v-row no-gutters class="background">
           <v-col cols="12" md="4" sm="4" style="background-color: #009900">
@@ -59,7 +60,7 @@
         </v-row>
       </v-card>
     </v-col> -->
-    <!-- <v-col cols="12" md="3" sm="12">
+      <!-- <v-col cols="12" md="3" sm="12">
       <v-card width="300" height="100" style="margin-top: 5px">
         <v-row no-gutters class="background">
           <v-col cols="12" md="4" sm="4" style="background-color: #009900">
@@ -87,7 +88,7 @@
         </v-row>
       </v-card>
     </v-col> -->
-    <!-- <v-col cols="12" md="3" sm="12">
+      <!-- <v-col cols="12" md="3" sm="12">
       <v-card width="300" height="100" style="margin-top: 5px">
         <v-row no-gutters class="background">
           <v-col cols="12" md="4" sm="4" style="background-color: #009900">
@@ -115,97 +116,171 @@
       </v-card>
     </v-col> -->
 
-    <v-col cols="12" sm="12" md="3">
-      <v-card
-        class="pl-9"
-        style="height: 350px; width: 100%; margin-left: 10px"
-      >
-        <h2><center>จำนวนนักศึกษา</center></h2>
-        <v-progress-circular
-          :rotate="-90"
-          :size="180"
-          :width="18"
-          :value="value"
-          color="#E03511"
-          class="pa-3"
-          style="margin-left: auto; margin-right: auto; display: flex"
+      <v-col cols="12" sm="12" md="3">
+        <v-card
+          class="pl-9"
+          style="height: 350px; width: 100%; margin-left: 10px"
         >
-          <h1>{{ value }}</h1>
-        </v-progress-circular>
-        <h3><center>5 ห้อง</center></h3>
-      </v-card>
-    </v-col>
-    <v-col cols="12" sm="12" md="3">
-      <v-card class="pl-9" style="height: 350px; width: 100%; margin-left: 10px">
-        <h2><center>จำนวนการใช้ห้องเรียน</center></h2>
-        <v-progress-circular
-          :rotate="-90"
-          :size="180"
-          :width="18"
-          :value="value2"
-          color="#112CE0"
-          style="margin-left: auto; margin-right: auto; display: flex"
+          <h2><center style="padding-top: 8%">จำนวนผู้ดูแล</center></h2>
+          <v-progress-circular
+            :rotate="-90"
+            :size="220"
+            :width="27"
+            :value="value"
+            color="#E03511"
+            class="pa-3"
+            style="
+              margin-left: auto;
+              margin-right: auto;
+              display: flex;
+              margin-top: 10%;
+            "
+          >
+            <h1>{{ value }}</h1>
+          </v-progress-circular>
+        </v-card>
+      </v-col>
+      <v-col cols="12" sm="12" md="3">
+        <v-card
+          class="pl-9"
+          style="height: 350px; width: 100%; margin-left: 10px"
         >
-          <h1>{{ value2 }}</h1>
-        </v-progress-circular>
-        <h3><center>5 ห้อง</center></h3>
-      </v-card>
-    </v-col>
-    <v-col cols="12" sm="12" md="3">
-      <v-card class="pl-9" style="height: 350px; width: 100%; margin-left: 10px">
-        <h2><center>จำนวนการจอง</center></h2>
-        <v-progress-circular
-          :rotate="-90"
-          :size="180"
-          :width="18"
-          :value="value3"
-          color="#11E026"
-          style="margin-left: auto; margin-right: auto; display: flex"
+          <h2><center style="padding-top: 8%">จำนวนห้องเรียน</center></h2>
+          <v-progress-circular
+            :rotate="-90"
+            :size="220"
+            :width="27"
+            :value="value2"
+            color="#112CE0"
+            style="
+              margin-left: auto;
+              margin-right: auto;
+              display: flex;
+              margin-top: 10%;
+            "
+          >
+            <h1>{{ value2 }}</h1>
+          </v-progress-circular>
+        </v-card>
+      </v-col>
+      <v-col cols="12" sm="12" md="3">
+        <v-card
+          class="pl-9"
+          style="height: 350px; width: 100%; margin-left: 10px"
         >
-          <h1>{{ value3 }}</h1>
-        </v-progress-circular>
-        <h3><center>5 ห้อง</center></h3>
-      </v-card>
-    </v-col>
-    <v-col cols="12" sm="12" md="3">
-      <v-card class="pl-9" style="height: 350px; width: 100%; margin-left: 10px">
-        <h2><center>จำนวนห้องเรียน</center></h2>
-        <v-progress-circular
-          :rotate="-90"
-          :size="180"
-          :width="18"
-          :value="value4"
-          color="#CB11E0"
-          style="margin-left: auto; margin-right: auto; display: flex"
+          <h2>
+            <center style="padding-top: 8%">การจองห้องเรียนในวันนี้</center>
+          </h2>
+          <v-progress-circular
+            :rotate="-90"
+            :size="220"
+            :width="27"
+            :value="value3"
+            color="#11E026"
+            style="
+              margin-left: auto;
+              margin-right: auto;
+              display: flex;
+              margin-top: 10%;
+            "
+          >
+            <h1>{{ value3 }}</h1>
+          </v-progress-circular>
+        </v-card>
+      </v-col>
+      <v-col cols="12" sm="12" md="3">
+        <v-card
+          class="pl-9"
+          style="height: 350px; width: 100%; margin-left: 10px"
         >
-          <h1>{{ value4 }}</h1>
-        </v-progress-circular>
-        <h3><center>5 ห้อง</center></h3>
-      </v-card>
-    </v-col>
-  </v-row>
+          <h2><center style="padding-top: 8%">การจองในเดือนนี้</center></h2>
+          <v-progress-circular
+            :rotate="-90"
+            :size="220"
+            :width="27"
+            :value="value4"
+            color="#CB11E0"
+            style="
+              margin-left: auto;
+              margin-right: auto;
+              display: flex;
+              margin-top: 10%;
+            "
+          >
+            <h1>{{ value4 }}</h1>
+          </v-progress-circular>
+        </v-card>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
+        <v-carousel
+          cycle
+          show-arrows-on-hover
+          :show-arrows="false"
+          style="width: 100%; height: 290px"
+        >
+          <v-carousel-item
+            v-for="(item, i) in items"
+            :key="i"
+            :src="item.src"
+            reverse-transition="fade-transition"
+            transition="fade-transition"
+          ></v-carousel-item>
+        </v-carousel>
+      </v-col>
+    </v-row>
+  </div>
 </template>
 <script>
+import moment from 'moment'
 export default {
   // middleware: 'auth',
   layout: 'indexx',
   data() {
     return {
+      dash: [],
       value: 0,
       value2: 0,
       value3: 0,
       value4: 0,
+      items: [
+        {
+          src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg',
+        },
+        {
+          src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
+        },
+        {
+          src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
+        },
+        {
+          src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
+        },
+      ],
     }
   },
   mounted() {
     this.pulldata()
   },
   methods: {
-    pulldata() {
-      this.value = 5
-      this.value2 = 10
-      this.value3 = 15
-      this.value4 = 20
+    async pulldata() {
+      const date = {
+        date_now: moment().format("yyyy-MM-DD"),
+        start_date: moment().startOf('month').format("yyyy-MM-DD"),
+        end_date: moment().endOf('month').format("yyyy-MM-DD"),
+      }
+
+      console.log(date)
+      try {
+        const { data } = await this.$axios.post('/api/v1/booking/getdash', date)
+        this.dash = data.data
+        this.value = this.dash.count_admin[0].countadmin
+        this.value2 = this.dash.count_room[0].countlistname
+        this.value3 = this.dash.count_day[0].countdate
+        this.value4 = this.dash.count_month[0].countmonth
+        console.log(this.dash)
+      } catch (error) {}
     },
   },
 }

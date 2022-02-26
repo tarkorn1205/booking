@@ -3,20 +3,26 @@
     <v-row>
       <v-col cols="2">
         <v-navigation-drawer permanent fixed>
-          <v-list style="background-color:#00B0FF">
+          <v-list style="background-color: #00b0ff">
             <v-list-item class="px-2">
-              <v-list-item-avatar>
-                <img src="~/assets/user.png" />
+              <v-list-item-avatar
+                style="
+                  height: 70px;
+                  width: 70px;
+                  margin-left: 78px;
+                "
+              >
+                 <img :src="$nuxt.$auth.user.img? $nuxt.$auth.user.img:`~/assets/user.png`"  style="object-fit: cover;"/>
               </v-list-item-avatar>
             </v-list-item>
 
-            <v-list-item link >
+            <v-list-item link>
               <v-list-item-content>
-                <v-list-item-title class="text-h6" style="color:#ffffff">
-                  Sandra Adams
+                <v-list-item-title class="text-h6" style="color: #ffffff">
+                  {{$nuxt.$auth.user.name? $nuxt.$auth.user.name:`ผิดพลาด`}}
                 </v-list-item-title>
-                <v-list-item-subtitle style="color:#ffffff"
-                  >sandra_a88@gmail.com</v-list-item-subtitle
+                <v-list-item-subtitle style="color: #ffffff"
+                  >{{$nuxt.$auth.user.phone? $nuxt.$auth.user.phone:`ผิดพลาด`}}</v-list-item-subtitle
                 >
               </v-list-item-content>
             </v-list-item>
@@ -57,15 +63,15 @@
                 >จองห้องเรียน</v-list-item-title
               >
             </v-list-item>
-            <v-footer padless style="margin-top: 390px;">
+            <v-footer padless style="margin-top: 350px">
               <v-list-item link to="login">
-              <v-list-item-icon style="color: #2196f3">
-                <v-icon>bx bx-log-out</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title style="margin-left: 50px"
-                >ออกจากระบบ</v-list-item-title
-              >
-            </v-list-item>
+                <v-list-item-icon style="color: #2196f3">
+                  <v-icon>bx bx-log-out</v-icon>
+                </v-list-item-icon>
+                <v-list-item-title style="margin-left: 50px"
+                  >ออกจากระบบ</v-list-item-title
+                >
+              </v-list-item>
             </v-footer>
           </v-list>
         </v-navigation-drawer>

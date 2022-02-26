@@ -2,7 +2,7 @@
   <v-row class="fill-height" style="font-family: 'Roboto', sans-serif">
     <v-col cols="12" md="11" style="margin-left: 50px; margin-top: -3%">
       <div class="box5" style="background-color: dodgerblue">
-        <i class='bx bx-calendar'>ปฎิทินจองห้องเรียนออนไลน์</i>
+        <i class="bx bx-calendar">ปฎิทินจองห้องเรียนออนไลน์</i>
       </div>
       <v-card outlined>
         <v-sheet height="64">
@@ -57,6 +57,7 @@
             :events="events"
             :event-color="getEventColor"
             :type="type"
+            @click:more="viewDay"
             @click:date="viewDay"
             @change="updateRange"
           ></v-calendar>
@@ -96,10 +97,12 @@
   </v-row>
 </template>
 <script>
+import moment from 'moment'
 export default {
   // middleware: 'auth',
   layout: 'indexx',
   data: () => ({
+    calen: [],
     active: 'notepad',
     focus: '',
     type: 'month',
@@ -110,20 +113,32 @@ export default {
       '4day': '4 วัน',
     },
     selectedEvent: {},
-    // selectedElement: null,
-    // selectedOpen: false,
+    selectedElement: null,
+    selectedOpen: false,
     events: [],
-    // colors: [
-    //   'blue',
-    //   'red',
-    //   'deep-purple',
-    //   'green',
-    //   'orange',
-    // ],
+    colors: [
+      '#0000FF',
+      '#FF8C00',
+      '#D02090',
+      '#8A2BE2',
+      '#7CFC00',
+      '#FF3300',
+      '#9900FF',
+      '#00BFFF',
+      '#32CD32',
+      '#D2691E',
+      '#FF69B4',
+      '#C71585',
+      '#A020F0',
+      '#FF0000',
+      '#FFDEAD',
+
+    ],
     names: ['Room721', 'Room722', 'Room725', 'Room731', 'Room732'],
   }),
   mounted() {
     this.$refs.calendar.checkChange()
+    this.getcalendar()
   },
   methods: {
     viewDay({ date }) {
@@ -168,47 +183,28 @@ export default {
       const days = (max.getTime() - min.getTime()) / 86400000
       const eventCount = this.rnd(days, days + 20)
 
-  
-      
-      let json = [
-        {
-          name: "Test",
-          start: new Date("2022-01-06T23:15:00.000Z"),   
-          end: new Date("2022-01-10T23:15:00.000Z"),
-        },
-        {
-          name: "Test23",
-          start: new Date("2022-01-20T23:15:00.000Z"),
-          end: new Date("2022-01-20T23:15:00.000Z"),
-        }
-      ]
+      this.events = this.calen
+    },
 
-      // for (let i = 0; i < eventCount; i++) {
-      //   const allDay = this.rnd(0, 3) === 0
-      //   const firstTimestamp = this.rnd(min.getTime(), max.getTime())
-      //   const first = new Date(firstTimestamp - (firstTimestamp % 900000))
-      //   const secondTimestamp = this.rnd(2, allDay ? 288 : 8) * 900000
-      //   const second = new Date(first.getTime() + secondTimestamp)
-
-      //   console.log(first.toISOString())
+    async getcalendar() {
+      try {
+        const { data } = await this.$axios.post('/api/v1/booking/getCalendar')
+        this.calen = data.data
         
-      //   // console.log({
-      //   //   name: this.names[this.rnd(0, this.names.length - 1)],
-      //   //   start: first,
-      //   //   end: second,
-      //   //   timed: !allDay,
-      //   // })
-
-      //   events.push({
-      //     name: this.names[this.rnd(0, this.names.length - 1)],
-      //     start: first,
-      //     end: second,
-      //     // color: this.colors[this.rnd(0, this.colors.length - 1)],
-      //     timed: !allDay,
-      //   })
-      // }
-
-      this.events = json
+        this.calen.map((val) => {
+          val.color = this.colors[this.rnd(0, this.colors.length - 1)],
+          val.name = `${val.name} ${moment(val.start).format('H:mm')}-${moment(val.end).format('H:mm')}`
+          val.start = new Date(val.start)
+          val.end = new Date(val.end)
+          return val
+          // name: "",
+          // start: new Date("2022-02-26T10:15:00.000Z"),
+          // end: new Date("2022-02-26T13:15:00.000Z"),
+        })
+        console.log(this.calen)
+        this.events = this.calen
+        // this.getAreaData()
+      } catch (error) {}
     },
     rnd(a, b) {
       return Math.floor((b - a + 1) * Math.random()) + a
@@ -217,6 +213,9 @@ export default {
 }
 </script>
 <style>
+.v-calendar .v-event{
+  color: white;
+}
 .theme--light.v-calendar-weekly .v-calendar-weekly__head-weekday {
   /* border-right: black; */
   color: dodgerblue;
@@ -245,4 +244,5 @@ export default {
   color: white;
   font-size: 18px;
 }
+
 </style>

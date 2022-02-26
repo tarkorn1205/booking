@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="box" style="background-color: dodgerblue">
+    <div class="box" style="background-color: dodgerblue; margin-top: -3%">
       <p>เช็คสถานะห้องเรียนวันนี้</p>
     </div>
     <v-row>
@@ -39,7 +39,7 @@
                       class="botton3"
                       style="color: white"
                       v-if="item.start_date != null"
-                      @click=";(bto = true), details()"
+                      @click=";(bto = true), details(item.id)"
                     >
                       มีการจองแล้ว
                     </v-btn>
@@ -154,7 +154,7 @@
               <v-col cols="12" sm="6" md="4">
                 <v-select
                   :rules="class2rules"
-                  v-model="state_goid.room_listname"
+                  v-model="state_goid.id_room"
                   style="padding-top: 0px"
                   :items="items"
                   item-text="name"
@@ -203,7 +203,7 @@
               <v-col cols="12">
                 <v-select
                   :rules="class3rules"
-                  v-model="state_goid.class_listname"
+                  v-model="state_goid.id_class"
                   :items="items2"
                   style="padding-top: 0px"
                   item-text="name"
@@ -371,9 +371,9 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="blue darken-1" text @click="dialog = false">
-            Close
+            ปิด
           </v-btn>
-          <v-btn color="blue darken-1" text @click="update()"> Save </v-btn>
+          <v-btn color="blue darken-1" text @click="update()"> บันทึก </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -420,6 +420,43 @@ export default {
   methods: {
     async update() {
       this.dialog = false
+      console.log(this.state_goid)
+      const mainder = {
+        // start_id: '12',
+        // id_room: this.state_goid.id_room.id,
+        // id_class: this.state_goid.id_class.id,
+        // number_people: this.state_goid.number_people,
+        // toping: this.state_goid.topic,
+        // bookingname: this.state_goid.bookingname,
+        // number: this.state_goid.number,
+        // start_date: this.state_goid.start_date,
+        // start_time: this.state_goid.start_time,
+        // end_date: this.state_goid.end_date,
+        // end_time: this.state_goid.end_time,
+
+        start_id: 12,
+        bookingname: this.state_goid.bookingname,
+        end_date: this.state_goid.end_date,
+        end_time: this.state_goid.end_time,
+        id_class: this.state_goid.id_class,
+        id_room: this.state_goid.id_room.id,
+        number: this.state_goid.number,
+        number_people: this.state_goid.number_people,
+        start_date: this.state_goid.start_date,
+        start_time: this.state_goid.start_time,
+        toping: this.state_goid.topic,
+      }
+      console.log(mainder)
+      try {
+        const data = await this.$axios.post(
+          '/api/v1/booking/getupdate',
+          mainder
+        )
+        this.getRoom()
+        console.log(
+          await this.$axios.post('/api/v1/booking/getupdate', mainder)
+        )
+      } catch (error) {}
     },
 
     async getdel(id) {
@@ -449,6 +486,8 @@ export default {
           start_id: id,
         })
         this.state_goid = data.data[0]
+
+        console.log('TEst 555+', this.state_goid)
         // this.items = data.data[0].room_listname
         // this.getAreaData()
       } catch (error) {}
@@ -471,7 +510,7 @@ export default {
         // this.getAreaData()
       } catch (error) {}
     },
-    async details() {
+    async details(id) {
       var m = new Date()
       var dateString =
         m.getUTCFullYear() +
@@ -484,6 +523,7 @@ export default {
           '/api/v1/booking/getonestatus',
           {
             start_date: dateString,
+            id: id,
           }
         )
         this.status_one = data.data[0]

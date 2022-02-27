@@ -161,7 +161,6 @@
                   item-value="id"
                   label="เลือกห้องเรียน"
                   required
-                  return-object
                 ></v-select>
               </v-col>
               <v-col cols="12" sm="6" md="4">
@@ -210,7 +209,6 @@
                   item-value="id"
                   label="เลือกชั้นเรียน"
                   required
-                  return-object
                 ></v-select>
               </v-col>
               <v-col cols="12" sm="6">
@@ -420,42 +418,27 @@ export default {
   methods: {
     async update() {
       this.dialog = false
-      console.log(this.state_goid)
+      console.log("1")
       const mainder = {
-        // start_id: '12',
-        // id_room: this.state_goid.id_room.id,
-        // id_class: this.state_goid.id_class.id,
-        // number_people: this.state_goid.number_people,
-        // toping: this.state_goid.topic,
-        // bookingname: this.state_goid.bookingname,
-        // number: this.state_goid.number,
-        // start_date: this.state_goid.start_date,
-        // start_time: this.state_goid.start_time,
-        // end_date: this.state_goid.end_date,
-        // end_time: this.state_goid.end_time,
-
-        start_id: 12,
+        start_id: this.state_goid.id,
         bookingname: this.state_goid.bookingname,
         end_date: this.state_goid.end_date,
         end_time: this.state_goid.end_time,
         id_class: this.state_goid.id_class,
-        id_room: this.state_goid.id_room.id,
+        id_room: this.state_goid.id_room,
         number: this.state_goid.number,
         number_people: this.state_goid.number_people,
         start_date: this.state_goid.start_date,
         start_time: this.state_goid.start_time,
         toping: this.state_goid.topic,
       }
-      console.log(mainder)
+      console.log(this.state_goid)
       try {
-        const data = await this.$axios.post(
+        await this.$axios.post(
           '/api/v1/booking/getupdate',
           mainder
         )
         this.getRoom()
-        console.log(
-          await this.$axios.post('/api/v1/booking/getupdate', mainder)
-        )
       } catch (error) {}
     },
 

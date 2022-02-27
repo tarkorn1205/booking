@@ -64,13 +64,14 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
+    '/admins/': 'http://api.it.cmtc.ac.th:49903/',
+    credentials: false,
+    proxyHeaders: false,
     // 'http://localhost:5000/'
     // proxy: true, // Can be also an object with default options
   },
   proxy: {
-    '/admins/': 'http://localhost:5000/',
-    credentials: false,
-    proxyHeaders: false,
+    
     // '/user/': 'http://localhost:5000/',
   },
   auth: {
@@ -125,6 +126,6 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   env: {
-    UrlAPI: process.env.API_URL || 'http://localhost:3000',
+    UrlAPI:  'http://api.it.cmtc.ac.th:49903/',
   },
 }

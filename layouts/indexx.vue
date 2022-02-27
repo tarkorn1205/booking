@@ -64,7 +64,7 @@
               >
             </v-list-item>
             <v-footer padless style="margin-top: 350px">
-              <v-list-item link to="login">
+              <v-list-item @click="logout()">
                 <v-list-item-icon style="color: #2196f3">
                   <v-icon>bx bx-log-out</v-icon>
                 </v-list-item-icon>
@@ -91,8 +91,20 @@
 
 <script>
 export default {
+  mounted(){
+    if(!this.$nuxt.$auth.user){
+      this.$router.replace("/login")
+    }
+  },
+  methods: {
+    logout(){
+      this.$nuxt.$auth.logout()
+      this.$router.replace("/login")
+    }
+  },
   data() {
     return {
+      
       // active: 'home',
       // items: [
       //   {

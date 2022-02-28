@@ -274,6 +274,7 @@
                   @click=";(btd = true), savebook()"
                   >ยืนยันการจอง</v-btn
                 >
+                
               </div>
             </v-col>
           </v-row>
@@ -426,7 +427,7 @@ export default {
         start_date: this.date,
         start_time: this.time,
         end_date: this.date2,
-        end_time: this.time2,
+        end_time: this.time2,    
         etc: this.etc,
       }
       console.log(mainder)

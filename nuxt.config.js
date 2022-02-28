@@ -64,7 +64,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    '/admins/': 'http://api.it.cmtc.ac.th:49903/',
+    baseURL: 'http://api.it.cmtc.ac.th:49903/',
     credentials: false,
     proxyHeaders: false,
     // 'http://localhost:5000/'

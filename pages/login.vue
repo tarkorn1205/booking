@@ -1,47 +1,5 @@
 <template>
   <div>
-    <!-- <vs-dialog not-close prevent-close v-model="active" style="z-index: 1">
-      <template #header>
-        <h4 class="not-margin"><b>เข้าสู่ระบบจองห้องเรียนออนไลน์</b></h4>
-      </template>
-      <div class="con-form">
-        <vs-input
-          color="#7d33ff"
-          class="user"
-          v-model="user"
-          placeholder="ชื่อผู้ใช้งาน"
-        >
-          <template #icon>
-            <i class="bx bxs-user"></i>
-          </template>
-        </vs-input>
-        <vs-input
-          color="#7d33ff"
-          class="pass"
-          v-model="pass"
-          type="password"
-          placeholder="รหัสผ่าน"
-        >
-          <template #icon>
-            <i class="bx bxs-lock-open"></i>
-          </template>
-        </vs-input>
-
-        <div class="flex" style="color: success; margin-left: 55px">
-          <vs-checkbox success v-model="option2">
-            เข้าสู่ระบบค้างไว้
-          </vs-checkbox>
-        </div>
-      </div>
-      <template #footer>
-        <div class="footer-dialog" style="width: 290px; margin-left: 46px">
-          <vs-button block @click="login()"> ล็อคอิน </vs-button>
-          <div class="new" style="padding-left: 100px">
-            <a href="register">สร้างบัญชีใหม่</a>
-          </div>
-        </div>
-      </template>
-    </vs-dialog> -->
     <v-card
       elevation="0"
       outlined
@@ -57,7 +15,8 @@
         box-shadow: 1px 1px 6px rgba(114, 55, 238, 0.25);
       "
     >
-      <h4 class="not-margin" style="text-align: center; margin-top: 76px">
+      <img src="~/assets/logo.png" style="margin-left: 30%; width: 40%; margin-top: 7%;" />
+      <h4 class="not-margin" style="text-align: center;">
         <b>เข้าสู่ระบบจองห้องเรียนออนไลน์</b>
       </h4>
       <div

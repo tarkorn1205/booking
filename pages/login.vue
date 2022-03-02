@@ -15,7 +15,7 @@
         box-shadow: 1px 1px 6px rgba(114, 55, 238, 0.25);
       "
     >
-      <img src="~/assets/logo.png" style="margin-left: 30%; width: 40%; margin-top: 7%;" />
+      <img src="@/assets/logo.png" style="margin-left: 30%; width: 40%; margin-top: 7%;" />
       <h4 class="not-margin" style="text-align: center;">
         <b>เข้าสู่ระบบจองห้องเรียนออนไลน์</b>
       </h4>
@@ -112,9 +112,6 @@ export default {
           timer: 1500,
         })
       }
-      // } else {
-      //   console.log('ยืนยัน Confirm')
-      // }
     },
   },
 }

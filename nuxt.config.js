@@ -64,7 +64,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'http://api.it.cmtc.ac.th:49903/',
+    baseURL: 'http://localhost:5000/',
     credentials: false,
     proxyHeaders: false,
     // 'http://localhost:5000/'
@@ -126,6 +126,7 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   env: {
-    UrlAPI:  'http://api.it.cmtc.ac.th:49903/',
+    UrlAPI:  'http://localhost:5000/',
   },
 }
+// http://api.it.cmtc.ac.th:49903/

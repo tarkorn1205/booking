@@ -63,7 +63,15 @@
                 >จองห้องเรียน</v-list-item-title
               >
             </v-list-item>
-            <v-footer padless style="margin-top: 350px">
+             <v-list-item link to="contact">
+              <v-list-item-icon style="color: #2196f3">
+                <v-icon>bx bxs-user-voice</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title style="margin-left: 10px"
+                >ข้อมูลการติดต่อ</v-list-item-title
+              >
+            </v-list-item>
+            <v-footer padless style="margin-top: 313px">
               <v-list-item @click="logout()">
                 <v-list-item-icon style="color: #2196f3">
                   <v-icon>bx bx-log-out</v-icon>

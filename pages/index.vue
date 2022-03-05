@@ -1,9 +1,11 @@
 <template>
   <div>
-    <v-row class="ma-0">
-      <div class="box7" style="background-color: dodgerblue; margin-top: -2%">
-        <i class="bx bx-dialpad-alt">Dashboard</i>
+     <div class="box7" style="background-color: dodgerblue; margin-top: -4%">
+        <i class="bx bx-dialpad-alt"></i>
+        หน้าแรก
       </div>
+    <v-row class="ma-0">
+     
       <v-col cols="12" sm="12" md="3">
         <v-card
           class="pl-9"
@@ -106,7 +108,7 @@
           cycle
           show-arrows-on-hover
           :show-arrows="false"
-          style="width: 100%; height: 290px"
+          style="width: 100%; height: 315px"
         >
           <v-carousel-item
             v-for="(item, i) in items"
@@ -200,8 +202,7 @@ export default {
   padding: 10px;
   color: white;
   font-size: 31px;
-  padding-right: 83.2%;
-  padding-left: 43%;
+      text-align: center;
 }
 @media only screen and (max-width: 900px) {
   .v-card.v-sheet.theme--light {

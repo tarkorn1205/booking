@@ -201,7 +201,7 @@ export default {
   height: 50px;
   padding: 10px;
   color: white;
-  font-size: 31px;
+  font-size: 28px;
       text-align: center;
 }
 @media only screen and (max-width: 900px) {

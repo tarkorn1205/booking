@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="box" style="background-color: dodgerblue; margin-top: -3%">
+    <div class="box" style="background-color: dodgerblue; margin-top: -4%">
       <p>เช็คสถานะห้องเรียนวันนี้</p>
     </div>
     <v-row>
@@ -643,7 +643,7 @@ tbody {
 }
 .v-card > .v-card__progress + :not(.v-btn):not(.v-chip):not(.v-avatar),
 .v-card > :first-child:not(.v-btn):not(.v-chip):not(.v-avatar) {
-  font-size: 20px;
+  /* font-size: 20px; */
 }
 .v-dialog > .v-card > .v-card__subtitle,
 .v-dialog > .v-card > .v-card__text {

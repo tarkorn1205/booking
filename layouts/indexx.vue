@@ -71,7 +71,7 @@
                 >ข้อมูลการติดต่อ</v-list-item-title
               >
             </v-list-item>
-            <v-footer padless style="margin-top: 313px">
+            <v-footer padless style="margin-top: 310px">
               <v-list-item @click="logout()">
                 <v-list-item-icon style="color: #2196f3">
                   <v-icon>bx bx-log-out</v-icon>
@@ -112,34 +112,6 @@ export default {
   },
   data() {
     return {
-      
-      // active: 'home',
-      // items: [
-      //   {
-      //     icon: 'bx bx-home',
-      //     title: 'หน้าแรก',
-      //     to: '/',
-      //     active: 'home',
-      //   },
-      //   {
-      //     icon: 'bx bx-notepad',
-      //     title: 'ตารางห้องเรียน',
-      //     to: '/classroomschedule',
-      //     active: 'classroomschedule',
-      //   },
-      //   {
-      //     icon: 'bx bx-memory-card',
-      //     title: 'เช็คสถานะห้องเรียน',
-      //     to: '/classroomstatus',
-      //     active: 'classroomstatus',
-      //   },
-      //   {
-      //     icon: 'bx bxs-user-account',
-      //     title: 'จองห้องเรียน',
-      //     to: '/booking',
-      //     active: 'booking',
-      //   },
-      // ],
     }
   },
 }

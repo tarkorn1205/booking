@@ -641,10 +641,6 @@ tbody {
 .v-card__text {
   margin-top: 4%;
 }
-.v-card > .v-card__progress + :not(.v-btn):not(.v-chip):not(.v-avatar),
-.v-card > :first-child:not(.v-btn):not(.v-chip):not(.v-avatar) {
-  /* font-size: 20px; */
-}
 .v-dialog > .v-card > .v-card__subtitle,
 .v-dialog > .v-card > .v-card__text {
   font-size: 20px;

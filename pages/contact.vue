@@ -7,7 +7,7 @@
     </v-col>
 
     <v-card
-      style="width: 370px; height: 310px; margin-left: 45px; margin-top: -20px"
+      style="width: 370px; height: 310px; margin-left: 45px; margin-top: -20px; background-color: lightskyblue;"
     >
       <v-col cols="12" sm="12" md="3">
         <img
@@ -34,7 +34,7 @@
     >
 
     <v-card
-      style="width: 370px; height: 310px; margin-left: 45px; margin-top: -20px"
+      style="width: 370px; height: 310px; margin-left: 45px; margin-top: -20px; background-color: lightskyblue;"
     >
       <v-col cols="12" sm="12" md="3">
         <img
@@ -60,7 +60,7 @@
       </v-col></v-card
     >
     <v-card
-      style="width: 370px; height: 310px; margin-left: 45px; margin-top: -20px"
+      style="width: 370px; height: 310px; margin-left: 45px; margin-top: -20px; background-color: lightskyblue;"
     >
       <v-col cols="12" sm="12" md="3">
         <img
@@ -88,7 +88,7 @@
     >
     <H2 style="padding-left: 615px">ผู้จัดทำ</H2>
     <v-card
-      style="width: 370px; height: 355px; margin-left: -219px; margin-top: 40px"
+      style="width: 370px; height: 355px; margin-left: -219px; margin-top: 40px; background-color: lightskyblue;"
     >
       <v-col cols="12" sm="12" md="3">
         <img

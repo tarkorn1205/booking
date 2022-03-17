@@ -35,7 +35,7 @@
                   <td>
                     <v-btn
                       depressed
-                      color="#00FF00"
+                      color="#FF0000"
                       class="botton3"
                       style="color: white"
                       v-if="item.start_date != null"
@@ -45,7 +45,7 @@
                     </v-btn>
                     <v-btn
                       depressed
-                      color="#FF0000"
+                      color="#00FF00"
                       style="color: white"
                       v-if="item.start_date == null"
                     >

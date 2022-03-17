@@ -421,7 +421,7 @@ export default {
         id_room: this.classroom.id,
         id_class: this.florclass.id,
         number_people: this.people,
-        toping: this.subject,
+        topic: this.subject,
         bookingname: this.bookingname,
         number: this.number,
         start_date: this.date,

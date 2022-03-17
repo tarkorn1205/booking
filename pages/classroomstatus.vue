@@ -430,7 +430,7 @@ export default {
         number_people: this.state_goid.number_people,
         start_date: this.state_goid.start_date,
         start_time: this.state_goid.start_time,
-        toping: this.state_goid.topic,
+        topic: this.state_goid.topic,
       }
       console.log(this.state_goid)
       try {

@@ -54,7 +54,15 @@ export default {
     '@nuxtjs/firebase',
   ],
   firebase: {
-    config: firebaseConfig,
+    config: {
+      apiKey: 'AIzaSyCuRK2LGqOzvelCzdBkSNX418wmbEBdkCE',
+      authDomain: 'bookingit-f81ec.firebaseapp.com',
+      projectId: 'bookingit-f81ec',
+      storageBucket: 'bookingit-f81ec.appspot.com',
+      messagingSenderId: '468136550484',
+      appId: '1:468136550484:web:91f056d517a9706035cdc1',
+      measurementId: 'G-6HBW4T58VS',
+    },
     services: {
       storage: true,
       database: true,
@@ -71,7 +79,6 @@ export default {
     // proxy: true, // Can be also an object with default options
   },
   proxy: {
-    
     // '/user/': 'http://localhost:5000/',
   },
   auth: {
@@ -126,7 +133,7 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   env: {
-    UrlAPI:  'http://localhost:5000/',
+    UrlAPI: 'http://localhost:5000/',
   },
 }
 // http://api.it.cmtc.ac.th:49903/

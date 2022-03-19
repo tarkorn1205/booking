@@ -1,9 +1,16 @@
 {
-   "apiKey": "AIzaSyCuRK2LGqOzvelCzdBkSNX418wmbEBdkCE",
-   "authDomain": "bookingit-f81ec.firebaseapp.com",
-   "projectId": "bookingit-f81ec",
-   "storageBucket": "bookingit-f81ec.appspot.com",
-   "messagingSenderId": "468136550484",
-   "appId": "1:468136550484:web:91f056d517a9706035cdc1",
-   "measurementId": "G-6HBW4T58VS"
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
 }

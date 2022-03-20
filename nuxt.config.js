@@ -1,7 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
 const firebaseConfig = require('./firebase.json')
 export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
+
   ssr: false,
   head: {
     titleTemplate: '%s - Booking',
@@ -24,10 +24,10 @@ export default {
     ],
   },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
+
   css: ['boxicons/css/boxicons.min.css'],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+ 
   plugins: [
     '@/plugins/vuesax.js',
     '@/plugins/donut.js',
@@ -36,18 +36,18 @@ export default {
     '@/plugins/import.js',
   ],
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
+
   components: true,
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+
   buildModules: [
-    // https://go.nuxtjs.dev/vuetify
+
     '@nuxtjs/vuetify',
   ],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
+  
   modules: [
-    // https://go.nuxtjs.dev/axios
+  
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
     'vue-sweetalert2/nuxt',
@@ -70,23 +70,18 @@ export default {
     },
   },
 
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
+ 
   axios: {
-    baseURL: 'http://localhost:5000/',
+    baseURL: 'http://128.199.245.64:81/',
     credentials: false,
     proxyHeaders: false,
-    // 'http://localhost:5000/'
-    // proxy: true, // Can be also an object with default options
+ 
   },
   proxy: {
-    // '/user/': 'http://localhost:5000/',
+    
   },
   auth: {
-    // redirect: {
-    //   login: '/login',
-    //   // logout: '/login',
-    //   home: '/',
-    // },
+   
     strategies: {
       local: {
         token: {
@@ -99,19 +94,19 @@ export default {
           login: {
             url: '/api/v1/auth/login',
             method: 'post',
-            // propertyName: 'accessToken',
+            
           },
           user: {
             url: '/api/v1/auth/me',
             method: 'get',
-            // propertyName: 'data.item',
+           
           },
         },
       },
     },
   },
 
-  // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
+  
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
@@ -130,10 +125,9 @@ export default {
     },
   },
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   env: {
-    UrlAPI: 'http://localhost:5000/',
+    UrlAPI: 'http://128.199.245.64:81/',
   },
 }
-// http://api.it.cmtc.ac.th:49903/
+

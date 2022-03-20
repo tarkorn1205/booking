@@ -14,7 +14,6 @@
             label="ชื่อผู้ใช้งาน"
             color="#46C93A"
           />
-          <!-- <vs-input label-placeholder="Username" v-model="value" /> -->
         </v-col>
         <v-col style="margin-top: 10px" cols="12" md="12" sm="12">
           <vs-input
@@ -127,7 +126,6 @@ export default {
     ResizeImage(event) {
       var file = event.target.files[0]
       if (file.type.match(/image.*/)) {
-        console.log('An image has been loaded')
         var reader = new FileReader()
         var self = this
         reader.onload = function (readerEvent) {
@@ -202,7 +200,6 @@ export default {
               (snapshot.bytesTransferred / snapshot.totalBytes) * 100
           },
           (error) => {
-            console.log(error.message)
           },
           () => {
             self.uploadValue = 100
@@ -224,10 +221,9 @@ export default {
         phone: this.adminphone,
         img: this.imageUrl
       }
-      console.log(adm)
       try {
         const data = await this.$axios.post('/api/v1/auth/register', adm)
-        // this.getAreaData()
+
         this.$swal.fire({
           position: 'openNotification(null)',
           icon: 'success',
@@ -241,9 +237,6 @@ export default {
         this.okbut= false
       }
 
-      // console.log("test");
-
-      // console.log(this.imageUrl);
     },
     redial(){
       

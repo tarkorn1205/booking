@@ -178,7 +178,6 @@ export default {
           // start: new Date("2022-02-26T10:15:00.000Z"),
           // end: new Date("2022-02-26T13:15:00.000Z"),
         })
-        console.log(this.calen)
         this.events = this.calen
         // this.getAreaData()
       } catch (error) {}

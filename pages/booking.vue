@@ -430,7 +430,6 @@ export default {
         end_time: this.time2,    
         etc: this.etc,
       }
-      console.log(mainder)
       try {
         const data = await this.$axios.post('/api/v1/booking/save', mainder)
         // this.getAreaData()

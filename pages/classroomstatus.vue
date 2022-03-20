@@ -418,7 +418,6 @@ export default {
   methods: {
     async update() {
       this.dialog = false
-      console.log("1")
       const mainder = {
         start_id: this.state_goid.id,
         bookingname: this.state_goid.bookingname,
@@ -432,7 +431,6 @@ export default {
         start_time: this.state_goid.start_time,
         topic: this.state_goid.topic,
       }
-      console.log(this.state_goid)
       try {
         await this.$axios.post(
           '/api/v1/booking/getupdate',
@@ -446,7 +444,6 @@ export default {
       this.id = id
     },
     async dele(id) {
-      // console.log(id)
       try {
         const { data } = await this.$axios.delete(
           '/api/v1/booking/getdelete',
@@ -469,8 +466,6 @@ export default {
           start_id: id,
         })
         this.state_goid = data.data[0]
-
-        console.log('TEst 555+', this.state_goid)
         // this.items = data.data[0].room_listname
         // this.getAreaData()
       } catch (error) {}
@@ -483,14 +478,13 @@ export default {
         ('0' + (m.getUTCMonth() + 1)).slice(-2) +
         '-' +
         ('0' + m.getUTCDate()).slice(-2)
-      // console.log(dateString)
+
       try {
         const { data } = await this.$axios.post('/api/v1/booking/getState', {
           start_date: dateString,
         })
         this.state_room = data.data
         console.log(this.state_room)
-        // this.getAreaData()
       } catch (error) {}
     },
     async details(id) {
@@ -510,7 +504,6 @@ export default {
           }
         )
         this.status_one = data.data[0]
-        console.log(this.status_one)
         // this.getAreaData()
       } catch (error) {}
     },

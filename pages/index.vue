@@ -161,7 +161,6 @@ export default {
         end_date: moment().endOf('month').format("yyyy-MM-DD"),
       }
 
-      console.log(date)
       try {
         const { data } = await this.$axios.post('/api/v1/booking/getdash', date)
         this.dash = data.data
@@ -169,7 +168,6 @@ export default {
         this.value2 = this.dash.count_room[0].countlistname
         this.value3 = this.dash.count_day[0].countdate
         this.value4 = this.dash.count_month[0].countmonth
-        console.log(this.dash)
       } catch (error) {}
     },
   },

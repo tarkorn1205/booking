@@ -93,17 +93,14 @@ export default {
         username: this.user,
         password: this.pass,
       }
-      // console.log(payload)
-      // if (this.com == true) {
+
       try {
         const response = await this.$auth.loginWith('local', {
           data: payload,
         })
         this.$router.push({ path: '/', redirect: 'actualRoute' })
       } catch (err) {
-        //  this.$swal('Hello Vue world!!!');
-        // console.log('err')
-        // this.$alert(err)
+
         this.$swal.fire({
           position: 'openNotification(null)',
           icon: 'error',

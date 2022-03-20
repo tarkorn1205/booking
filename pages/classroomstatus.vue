@@ -466,8 +466,6 @@ export default {
           start_id: id,
         })
         this.state_goid = data.data[0]
-        // this.items = data.data[0].room_listname
-        // this.getAreaData()
       } catch (error) {}
     },
     async getRoom() {
@@ -504,7 +502,6 @@ export default {
           }
         )
         this.status_one = data.data[0]
-        // this.getAreaData()
       } catch (error) {}
     },
   },

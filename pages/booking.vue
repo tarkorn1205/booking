@@ -319,7 +319,7 @@
                   style="color: white"
                   text
                   @click=";(btd = false), sct()"
-                  >Close</v-btn
+                  >ปิด</v-btn
                 >
               </v-card-actions>
             </v-card>

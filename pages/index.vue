@@ -136,16 +136,19 @@ export default {
       value4: 0,
       items: [
         {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg',
+          src: "https://firebasestorage.googleapis.com/v0/b/bookingit-f81ec.appspot.com/o/31978.jpg?alt=media&token=c2e84d78-c961-4bdd-a462-ee2c151a86de",
         },
         {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
+          src: "https://firebasestorage.googleapis.com/v0/b/bookingit-f81ec.appspot.com/o/31976.jpg?alt=media&token=7501c272-c04a-44a5-b367-dc70ed7af514",
         },
         {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
+          src: "https://firebasestorage.googleapis.com/v0/b/bookingit-f81ec.appspot.com/o/31979.jpg?alt=media&token=61c4ec74-ae0c-4a2d-ba4a-0a8d4f69d227",
         },
         {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
+          src: "https://firebasestorage.googleapis.com/v0/b/bookingit-f81ec.appspot.com/o/31982.jpg?alt=media&token=2b17a46b-2505-4b19-8a2f-c324d442dfac",
+        },
+        {
+          src: "https://firebasestorage.googleapis.com/v0/b/bookingit-f81ec.appspot.com/o/31977.jpg?alt=media&token=a81759dd-2b17-4fef-8f50-bacf23d8b052",
         },
       ],
     }

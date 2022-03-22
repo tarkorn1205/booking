@@ -4,8 +4,8 @@ export default {
 
   ssr: false,
   head: {
-    titleTemplate: '%s - Booking',
-    title: 'Booking',
+    titleTemplate: '%s - IT-Booking',
+    title: 'Booking a classroom online',
     htmlAttrs: {
       lang: 'en',
     },
@@ -72,7 +72,8 @@ export default {
 
  
   axios: {
-    baseURL: 'http://128.199.245.64:81/',
+    baseURL: 'http://localhost:5000/',
+
     credentials: false,
     proxyHeaders: false,
  
@@ -127,7 +128,8 @@ export default {
 
   build: {},
   env: {
-    UrlAPI: 'http://128.199.245.64:81/',
+    urlAPI: 'http://localhost:5000/',
+
   },
 }
 

@@ -232,16 +232,12 @@ export default {
           timer: 1500,
         })
         this.okbut= false
-        const myTimeout = setTimeout(this.redial, 2000);
+        this.$router.push('/login')
       } catch (error) {
         this.okbut= false
       }
-
-    },
-    redial(){
       
-      this.$router.push({ path: 'login', redirect: 'actualRoute' })
-    }
+    },
   },
 }
 </script>

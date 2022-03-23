@@ -419,7 +419,6 @@ export default {
     async update() {
       this.dialog = false
       const mainder = {
-        start_id: this.state_goid.id,
         bookingname: this.state_goid.bookingname,
         end_date: this.state_goid.end_date,
         end_time: this.state_goid.end_time,
@@ -430,12 +429,13 @@ export default {
         start_date: this.state_goid.start_date,
         start_time: this.state_goid.start_time,
         topic: this.state_goid.topic,
+        etc: 'tttttt',
+        start_id: this.state_goid.id,
       }
+      console.log(mainder)
       try {
-        await this.$axios.post(
-          '/api/v1/booking/getupdate',
-          mainder
-        )
+        await this.$axios.post('/api/v1/booking/getupdate', mainder)
+
         this.getRoom()
       } catch (error) {}
     },
@@ -482,7 +482,7 @@ export default {
           start_date: dateString,
         })
         this.state_room = data.data
-        console.log(this.state_room)
+        // console.log(this.state_room)
       } catch (error) {}
     },
     async details(id) {

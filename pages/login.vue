@@ -68,7 +68,7 @@
       >
         <vs-button block @click="login()"> ล็อคอิน </vs-button>
         <div class="new" style="text-align: center">
-          <a href="register">สร้างบัญชีใหม่</a>
+          <NuxtLink to="/register">สร้างบัญชีใหม่</NuxtLink>
         </div>
       </div>
     </v-card>

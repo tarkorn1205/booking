@@ -109,7 +109,6 @@ export default {
       '#A020F0',
       '#FF0000',
       '#FFDEAD',
-
     ],
     names: ['Room721', 'Room722', 'Room725', 'Room731', 'Room732'],
   }),
@@ -155,10 +154,11 @@ export default {
     updateRange({ start, end }) {
       const events = []
 
-      const min = new Date(`${start.date}T00:00:00`)
-      const max = new Date(`${end.date}T23:59:59`)
-      const days = (max.getTime() - min.getTime()) / 86400000
-      const eventCount = this.rnd(days, days + 20)
+      // const min = new Date(`${start.date}`)
+      // const max = new Date(`${end.date}`)
+      // console.log(min);
+      // const days = (max.getTime() - min.getTime()) / 86400000
+      // const eventCount = this.rnd(days, days + 20)
 
       this.events = this.calen
     },
@@ -167,12 +167,26 @@ export default {
       try {
         const { data } = await this.$axios.post('/api/v1/booking/getCalendar')
         this.calen = data.data
-        
+        console.log(data.data)
         this.calen.map((val) => {
-          val.color = this.colors[this.rnd(0, this.colors.length - 1)],
-          val.name = `${val.name} ${moment(val.start).format('H:mm')}-${moment(val.end).format('H:mm')}`
-          val.start = new Date(val.start)
-          val.end = new Date(val.end)
+          ;(val.color = this.colors[this.rnd(0, this.colors.length - 1)]),
+            (val.name = `${val.name} ${moment(val.start)
+              .subtract(1, 'hour')
+              .zone('+0100')
+              .format('HH:mm')}-${moment(val.end)
+              .subtract(1, 'hour')
+              .zone('+0100')
+              .format('HH:mm')}`)
+          let datestart = moment(val.start).format('YYYY-MM-DD')
+          let dateend = moment(val.end)
+            .subtract(1, 'hour')
+            .zone('+0100')
+            .format('YYYY-MM-DD')
+          // console.log(moment(dateend).add(-1,'days').format('YYYY-MM-DD'));
+          val.start = new Date(moment(datestart).format('YYYY-MM-DD'))
+          val.end = new Date(moment(dateend).format('YYYY-MM-DD'))
+          console.log(datestart)
+          console.log(dateend)
           return val
           // name: "",
           // start: new Date("2022-02-26T10:15:00.000Z"),
@@ -189,7 +203,7 @@ export default {
 }
 </script>
 <style>
-.v-calendar .v-event{
+.v-calendar .v-event {
   color: white;
 }
 .theme--light.v-calendar-weekly .v-calendar-weekly__head-weekday {
@@ -220,5 +234,4 @@ export default {
   color: white;
   font-size: 18px;
 }
-
 </style>

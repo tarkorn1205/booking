@@ -72,8 +72,7 @@ export default {
 
  
   axios: {
-    baseURL: 'http://localhost:5000/',
-
+    baseURL: 'https://bookingaclassroomonline.site',
     credentials: false,
     proxyHeaders: false,
  
@@ -93,15 +92,16 @@ export default {
         },
         endpoints: {
           login: {
-            url: '/api/v1/auth/login',
+            url: 'api/v1/auth/login',
             method: 'post',
             
           },
           user: {
-            url: '/api/v1/auth/me',
+            url: 'api/v1/auth/me',
             method: 'get',
            
           },
+          logout: false
         },
       },
     },
@@ -127,9 +127,6 @@ export default {
   },
 
   build: {},
-  env: {
-    urlAPI: 'http://localhost:5000/',
-
-  },
+  
 }
 

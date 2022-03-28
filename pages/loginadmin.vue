@@ -25,9 +25,7 @@
               <i class='bx bxs-lock' ></i>
             </template>
           </vs-input>
-          <!-- <div class="center con-switch">
-            <vs-switch success v-model="active"> Confirm </vs-switch>
-          </div> -->
+         
         </div>
         <v-col cols="12" sm="8" md="6">
         <vs-button class="button" color='rgb(23, 201, 100)'

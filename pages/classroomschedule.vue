@@ -154,11 +154,7 @@ export default {
     updateRange({ start, end }) {
       const events = []
 
-      // const min = new Date(`${start.date}`)
-      // const max = new Date(`${end.date}`)
-      // console.log(min);
-      // const days = (max.getTime() - min.getTime()) / 86400000
-      // const eventCount = this.rnd(days, days + 20)
+  
 
       this.events = this.calen
     },
@@ -207,7 +203,6 @@ export default {
   color: white;
 }
 .theme--light.v-calendar-weekly .v-calendar-weekly__head-weekday {
-  /* border-right: black; */
   color: dodgerblue;
 }
 .v-btn.v-btn--fab.v-btn--has-bg.v-btn--round.theme--light.v-size--small.transparent {
